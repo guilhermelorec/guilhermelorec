@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="860" height="250" viewBox="0 0 860 250">
+  <style>
+    .m { animation: up 5s ease-in-out infinite; }
+    .m1 { animation-delay: .4s; } .m2 { animation-delay: .8s; }
+    @keyframes up { 0%, 60%, 100% { transform: translateY(0); } 15% { transform: translateY(-4px); } }
+    .dot { animation: pulse 1.8s ease-in-out infinite; }
+    @keyframes pulse { 50% { opacity: .3; } }
+    @media (prefers-reduced-motion: reduce) { .m, .dot { animation: none; } }
+  </style>
+  <rect x="0.5" y="0.5" width="859" height="249" rx="14" fill="#141a24" stroke="#243040"/>
+  <text x="24" y="44" font-family="'JetBrains Mono', Consolas, 'SFMono-Regular', Menlo, monospace" font-size="13" fill="#2fd4e8">projeto principal</text>
+  <text x="24" y="78" font-family="'Segoe UI', -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="30" font-weight="700" fill="#e6edf3" letter-spacing="2">ORDIK</text>
+  <text x="138" y="77" font-family="'Segoe UI', -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="15" fill="#9aa7b6">Sistema · PDV · Site</text>
+  <circle class="dot" cx="710" cy="40" r="5" fill="#6fe3a4"/>
+  <text x="722" y="45" font-family="'Segoe UI', -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="13" fill="#667385">em desenvolvimento</text>
+  <text x="836" y="78" text-anchor="end" font-family="'Segoe UI', -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="12" fill="#667385">código privado</text>
+  <g class="m m0">
+    <rect x="24" y="98" width="256" height="126" rx="10" fill="#0d1117" stroke="#243040"/>
+    <rect x="42" y="118" width="8" height="8" rx="2" fill="#2fd4e8"/>
+    <text x="58" y="127" font-family="'Segoe UI', -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="15" font-weight="600" fill="#e6edf3">Sistema de Gestão</text>
+    <text x="42" y="158" font-family="'Segoe UI', -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="13" fill="#9aa7b6">Cadastros, estoque, financeiro</text><text x="42" y="178" font-family="'Segoe UI', -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="13" fill="#9aa7b6">e relatórios em um só painel.</text>
+  </g>
+  <g class="m m1">
+    <rect x="298" y="98" width="256" height="126" rx="10" fill="#0d1117" stroke="#243040"/>
+    <rect x="316" y="118" width="8" height="8" rx="2" fill="#7c83ff"/>
+    <text x="332" y="127" font-family="'Segoe UI', -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="15" font-weight="600" fill="#e6edf3">PDV</text>
+    <text x="316" y="158" font-family="'Segoe UI', -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="13" fill="#9aa7b6">Frente de caixa rápida: vender,</text><text x="316" y="178" font-family="'Segoe UI', -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="13" fill="#9aa7b6">receber e fechar o caixa.</text>
+  </g>
+  <g class="m m2">
+    <rect x="572" y="98" width="256" height="126" rx="10" fill="#0d1117" stroke="#243040"/>
+    <rect x="590" y="118" width="8" height="8" rx="2" fill="#2fd4e8"/>
+    <text x="606" y="127" font-family="'Segoe UI', -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="15" font-weight="600" fill="#e6edf3">Site</text>
+    <text x="590" y="158" font-family="'Segoe UI', -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="13" fill="#9aa7b6">Página do produto para apresentar</text><text x="590" y="178" font-family="'Segoe UI', -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="13" fill="#9aa7b6">o Ordik e captar novos clientes.</text>
+  </g>
+</svg>
