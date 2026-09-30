@@ -14,20 +14,20 @@
 </p>
 
 <div align="left">
-  <img align="left" src="assets/terminal.svg" width="300"/>
+  <img align="left" src="assets/terminal.svg" width="36%"/>
 
 <h3 align="center">Sobre mim</h3>
 
-Sou `Engenheiro de Software` em Goiânia e estudo no `Centro Universitário de Goiás`, onde curso `Engenharia de Software`. Hoje meu foco é o **Ordik**, meu projeto principal: um `sistema de gestão`, um `PDV` de frente de caixa e o `site` do produto, pensados para quem vende todos os dias.
+Sou **Engenheiro de Software** em Goiânia e estudo Engenharia de Software no Centro Universitário de Goiás. Hoje meu foco é o **Ordik**, meu projeto principal: um sistema de gestão, um PDV de frente de caixa e o site do produto, pensados para quem vende todos os dias.
 
-No back-end trabalho com `Java, Spring Boot, JPA e Maven`. No front-end uso `Angular, Next.js e TypeScript`, e no desktop, `Electron`. Os dados ficam em `PostgreSQL, Supabase ou Oracle`, conforme o projeto.
+No back-end trabalho com **Java, Spring Boot, JPA e Maven**. No front-end uso **Angular, Next.js e TypeScript**, e no desktop, **Electron**. Os dados ficam em **PostgreSQL, Supabase ou Oracle**, conforme o projeto.
 Gosto de entender a rotina de quem vai usar o sistema antes de escrever a primeira linha, e de entregar a solução inteira: banco, API, interface e deploy.
 </div>
 
 <br clear="left"/>
 
 <div align="left">
-  <img align="right" src="assets/receipt.svg" width="200"/>
+  <img align="right" src="assets/receipt.svg" width="26%"/>
 
 <h3 align="center">Além do código</h3>
 
