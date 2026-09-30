@@ -185,30 +185,37 @@ function terminal() {
 // Cupom do PDV sendo impresso, ao lado do "Além do código".
 function receipt() {
   const t = THEMES.dark;
-  const items = [['Café', '4,50'], ['Pão de queijo', '6,00'], ['Suco', '7,90']];
-  const rows = items.map(([n, v], i) => `<text x="62" y="${96 + i * 18}" ${MONO} font-size="11" fill="#3b4655">${esc(n)}</text><text x="138" y="${96 + i * 18}" text-anchor="end" ${MONO} font-size="11" fill="#3b4655">${v}</text>`).join('');
+  const L = 34, R = 166, TOP = 50, BOT = 172;           // papel de 132px de largura
+  const items = [['Café', '4,50'], ['Pão queijo', '6,00'], ['Suco', '7,90']];
+  const ink = '#2b3542';
+  const rows = items.map(([n, v], i) => `<text x="${L + 10}" y="${98 + i * 18}" ${MONO} font-size="11" fill="${ink}">${esc(n)}</text><text x="${R - 10}" y="${98 + i * 18}" text-anchor="end" ${MONO} font-size="11" fill="${ink}">${v}</text>`).join('');
+  // borda serrilhada: 12 dentes iguais
+  const teeth = 12, tw = (R - L) / teeth;
+  let zig = '';
+  for (let i = 0; i < teeth; i++) zig += ` L${(R - (i + 0.5) * tw).toFixed(1)} ${BOT + 6} L${(R - (i + 1) * tw).toFixed(1)} ${BOT}`;
+  const paper = `M${L} ${TOP} L${R} ${TOP} L${R} ${BOT}${zig} Z`;
   return `<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200">
   <style>
-    .paper { animation: print 4s ease-out infinite; }
-    @keyframes print { 0% { transform: translateY(-110px); } 55%, 90% { transform: translateY(0); } 100% { transform: translateY(0); opacity: 0; } }
+    .paper { animation: print 5s ease-out infinite; }
+    @keyframes print { 0% { transform: translateY(-130px); } 50%, 88% { transform: translateY(0); opacity: 1; } 100% { transform: translateY(0); opacity: 0; } }
     .led { animation: led 1s steps(1) infinite; }
     @keyframes led { 50% { opacity: .25; } }
     @media (prefers-reduced-motion: reduce) { .paper, .led { animation: none; } }
   </style>
   <rect x="0.5" y="0.5" width="199" height="199" rx="14" fill="${t.bg1}" stroke="${t.border}"/>
-  <clipPath id="c"><rect x="0" y="52" width="200" height="140"/></clipPath>
+  <clipPath id="c"><rect x="0" y="${TOP}" width="200" height="${200 - TOP}"/></clipPath>
   <g clip-path="url(#c)"><g class="paper">
-    <path d="M54 52h92v108l-7.7 6-7.6-6-7.7 6-7.7-6-7.6 6-7.7-6-7.7 6-7.7-6-7.6 6-7.7-6z" fill="#e8edf2"/>
-    <text x="100" y="72" text-anchor="middle" ${MONO} font-size="11" font-weight="700" fill="#1a2330">ORDIK PDV</text>
-    <line x1="62" y1="80" x2="138" y2="80" stroke="#9aa7b6" stroke-dasharray="3 2"/>
+    <path d="${paper}" fill="#e8edf2"/>
+    <text x="100" y="70" text-anchor="middle" ${MONO} font-size="11" font-weight="700" fill="#1a2330">ORDIK PDV</text>
+    <line x1="${L + 10}" y1="80" x2="${R - 10}" y2="80" stroke="#9aa7b6" stroke-dasharray="3 2"/>
     ${rows}
-    <line x1="62" y1="140" x2="138" y2="140" stroke="#9aa7b6" stroke-dasharray="3 2"/>
-    <text x="62" y="154" ${MONO} font-size="11" font-weight="700" fill="#1a2330">TOTAL</text>
-    <text x="138" y="154" text-anchor="end" ${MONO} font-size="11" font-weight="700" fill="#1a2330">18,40</text>
+    <line x1="${L + 10}" y1="144" x2="${R - 10}" y2="144" stroke="#9aa7b6" stroke-dasharray="3 2"/>
+    <text x="${L + 10}" y="161" ${MONO} font-size="11" font-weight="700" fill="#1a2330">TOTAL</text>
+    <text x="${R - 10}" y="161" text-anchor="end" ${MONO} font-size="11" font-weight="700" fill="#1a2330">18,40</text>
   </g></g>
-  <rect x="36" y="36" width="128" height="20" rx="6" fill="${t.bg2}" stroke="${t.border}" stroke-width="2"/>
-  <rect x="48" y="44" width="104" height="4" rx="2" fill="#05080c"/>
-  <circle class="led" cx="156" cy="46" r="2.5" fill="${t.ok}"/>
+  <rect x="22" y="34" width="156" height="20" rx="6" fill="${t.bg2}" stroke="${t.border}" stroke-width="2"/>
+  <rect x="30" y="42" width="140" height="4" rx="2" fill="#05080c"/>
+  <circle class="led" cx="171" cy="44" r="2.5" fill="${t.ok}"/>
 </svg>
 `;
 }
