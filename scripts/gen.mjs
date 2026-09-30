@@ -186,7 +186,7 @@ function terminal() {
 function receipt() {
   const t = THEMES.dark;
   const L = 34, R = 166, TOP = 50, BOT = 172;           // papel de 132px de largura
-  const items = [['Café', '4,50'], ['Pão queijo', '6,00'], ['Suco', '7,90']];
+  const items = [['Café', '4,50'], ['Pão', '6,00'], ['Suco', '7,90']];
   const ink = '#2b3542';
   const rows = items.map(([n, v], i) => `<text x="${L + 10}" y="${98 + i * 18}" ${MONO} font-size="11" fill="${ink}">${esc(n)}</text><text x="${R - 10}" y="${98 + i * 18}" text-anchor="end" ${MONO} font-size="11" fill="${ink}">${v}</text>`).join('');
   // borda serrilhada: 12 dentes iguais
